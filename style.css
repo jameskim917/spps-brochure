@@ -18,7 +18,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 10px 10px 0 10px;
+    padding: 20px 20px 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,20 +88,92 @@ header {
     }
 }
 
-header > nav {
-    display: none;
-}
-header > nav > ul{
-    list-style-type: none;
+nav {
+    position: fixed;
+    height: 50vh;
+    top: 50%;
+    left: 20px;
+    margin-top: -25vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: opacity-in 1.5s 4.5s both;
+}
+
+nav > ul{
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     font-family: Epilogue, serif;
+}
+
+nav > ul > a {
+    color: rgba(0, 40, 144, 1);
+}
+
+nav > ul > li {
+    position: relative;
+    width: 10px;
+    height: calc(100% / 5);
+    background-color: #DAE4FC;
+    border-radius: 25px;
+}
+a {
+    text-decoration: none;
+}
+nav > ul > li a, 
+nav > ul > li h3 {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    color: rgba(0, 40, 144, 1);
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: -12.5px;
+}
+
+/* nav > .nav-current,  */
+.nav-current {
+    position: absolute;
+    top: 50vh;
+    left: 20px;
+    margin-top: -25vh;
+    display: inline-block;
+    width: 10px;
+    height: calc((50vh - 40px) / 5);
+    background-color: #002890;
+    border-radius: 25px;
+    transition: top 0.3s, transform 0.1s;
+    animation: opacity-in 1.5s 5s both;
+}
+
+#hero:hover ~ .nav-current,
+#mission:hover .nav-current{
+    transform: translateY(0);
+}
+
+#mission:hover ~ .nav-current,
+#mission:hover .nav-current{
+    /* top: calc(((50vh - 40px) / 5) + 10px); */
+    transform: translateY( calc(((50vh - 40px)/ 5) + 10px) );
+}
+
+#profile:hover ~ .nav-current,
+#profile:hover .nav-current{
+    /* top: calc(((50vh - 40px) / 5) + 10px); */
+    transform: translateY( calc((((50vh - 40px)/ 5) + 10px)*2) );
 }
 
 /* SECTIONS */
 main {
     width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 section {
@@ -110,23 +182,22 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* main */
-main {
     padding: 0 20px;
+    scroll-snap-align: start;
 }
 
 /* HERO */
 #hero {
-
+    background-color: #F5FFFA;
 }
 
-#hero-container {
+#hero-container, #mission-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     gap: 50px;
+    padding-left: 160px;
 }
 
 @keyframes opacity-in {
@@ -141,21 +212,16 @@ main {
 #hero-illustration-container {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 30vw;
+    height: 30vw;
     position: relative;
 }
 
-#hero-illustration-container:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-}
-
-#hero-illustration-absolute {
+/* #hero-illustration-absolute {
     position: absolute;
     width: 100%;
     height: 100%;
-}
+} */
 
 #hero-top, #hero-middle, #hero-bottom {
     display: flex;
@@ -180,7 +246,7 @@ main {
     background-color: #4DD8A6;
     border-top-right-radius: 75px;
     border-bottom-right-radius: 75px;
-    animation: hero-top-left 1.5s 4.5s both;
+    animation: hero-top-left 1.5s 6.5s both;
 }
 
 #hero-top-right {
@@ -191,7 +257,7 @@ main {
     background-image: url('./assets/heroTop.jpg');
     background-position: bottom;
     background-size: cover;
-    animation: opacity-in 1.5s 7.5s both;
+    animation: opacity-in 1.5s 8s both;
 }
 
 #hero-middle-left {
@@ -202,7 +268,7 @@ main {
     background-image: url('./assets/heroMiddle.jpg');
     background-position: top;
     background-size: cover;
-    animation: opacity-in 1.5s 6s both;
+    animation: opacity-in 1.5s 9.5s both;
 }
 
 @keyframes hero-middle-right {
@@ -222,7 +288,7 @@ main {
     border-top-left-radius: 75px;
     border-top-right-radius: 75px;
     background-color: #002890;
-    animation: hero-middle-right 1.5s 4.5s both;
+    animation: hero-middle-right 1.5s 6.5s both;
 }
 
 #hero-bottom-left {
@@ -232,14 +298,14 @@ main {
     background-image: url('./assets/heroBottom.jpg');
     background-position: center;
     background-size: cover;
-    animation: opacity-in 1.5s 4.5s both;
+    animation: opacity-in 1.5s 6.5s both;
 }
 
 #hero-bottom-center {
     width: calc((100%/3));
     height: 100%;
     background-image: linear-gradient(to left top, #002890 50%, #4DD8A6 50%);
-    animation: opacity-in 1.5s 7.5s both;
+    animation: opacity-in 1.5s 8s both;
 }
 
 #hero-bottom-right {
@@ -247,7 +313,7 @@ main {
     height: 100%;
     border-bottom-left-radius: 75px;
     background-color: #A4E8CF;
-    animation: opacity-in 1.5s 6s both;
+    animation: opacity-in 1.5s 9.5s both;
 }
 
 /* @keyframes heroTextWidth {
@@ -267,15 +333,62 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    animation: visibilityIn 1.5s 9s both;
+    animation: visibilityIn 1.5s 11s both;
 }
 
 #hero-text-container h1 {
     font-family: Epilogue, serif;
-    animation: opacity-in 1.5s 9s both;
+    font-size: 36px;
+    animation: opacity-in 1.5s 11s both;
+    letter-spacing: 0.01em;
 }
 
 #hero-text-container p {
     font-family: Lora, sans-serif;
-    animation: opacity-in 1.5s 10.5s both;
+    font-size: 13px;
+    font-weight: 400;
+    animation: opacity-in 1.5s 11.5s both;
+}
+
+#hero-btn {
+    background: linear-gradient(rgba(0, 40, 144, 1), rgba(0, 40, 144, 0.75));
+    border-radius: 25px;
+    padding: 8px 16px;
+    width: fit-content;
+    text-decoration: none;
+    font-family: 'Epilogue';
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 3px 30px rgb(0 40 144 / 30%);
+    margin-top: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: opacity-in 1.5s 12s both;
+}
+
+#hero-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 3px 15px rgb(0 40 144 / 30%);
+}
+
+#mission-text-container h1 {
+    font-family: Epilogue, serif;
+    font-size: 36px;
+    animation: opacity-in 1.5s 11s both;
+    letter-spacing: 0.01em;
+}
+
+#mission-text-container p {
+    font-family: Lora, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    animation: opacity-in 1.5s 11.5s both;
+}
+
+#mission-img-container img {
+    width: 100%;
+    max-width: 30%;
+    height: auto;
 }

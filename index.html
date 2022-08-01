@@ -14,31 +14,10 @@
             <div id="logo-text"><h1>St. Paul Preparatory School</h1></div>
         </div>
     </header>
-    <!-- <nav>
-        <ul>
-            <li><h3>Home</h3></li>
-            <li><h3>Mission</h3></li>
-            <li><h3>Profile</h3></li>
-            <li><h3>Accreditations</h3></li>
-            <li><h3>Location</h3></li>
-        </ul>
-        <span id="nav-current"></span>
-    </nav> -->
     <main>
         <section id="hero">
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href='#mission'>Mission</a></li>
-                    <li><h3>Profile</h3></li>
-                    <li><h3>Accreditations</h3></li>
-                    <li><h3>Location</h3></li>
-                </ul>
-                <!-- <span class="nav-current"></span> -->
-            </nav>
             <div id="hero-container">
                 <div id="hero-illustration-container">
-                    <!-- <div id="hero-illustration-absolute"> -->
                         <div id="hero-top">
                             <div id="hero-top-left"></div>
                             <div id="hero-top-right"></div>
@@ -52,7 +31,6 @@
                             <div id="hero-bottom-center"></div>
                             <div id="hero-bottom-right"></div>
                         </div>
-                    <!-- </div> -->
                 </div>
                 <div id="hero-text-container">
                     <h1>Preparing Our Students <br/>
@@ -63,42 +41,116 @@
             </div>
         </section>
         <section id="mission">
-            <span class="nav-current"></span>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href='#mission'>Mission</a></li>
-                    <li><h3>Profile</h3></li>
-                    <li><h3>Accreditations</h3></li>
-                    <li><h3>Location</h3></li>
-                </ul>
-                <!-- <span class="nav-current"></span> -->
-            </nav>
             <div id="mission-container">
-                <div id="mission-text-container">
-                    <h1>Mission &<br/>
-                    Core Values</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt consectetur urna, at congue ante dapibus semper. Duis interdum ultrices sem nec dapibus. Suspendisse tempus lectus at ligula pretium mattis. Nulla feugiat lacinia felis feugiat laoreet. Donec elit sem, viverra sit amet lacus vitae, pretium tincidunt tortor. Donec laoreet imperdiet sem rhoncus pretium. Integer porttitor viverra tellus eget tempor. Vivamus convallis molestie molestie. In pharetra urna non urna elementum, in rhoncus nibh suscipit. Pellentesque hendrerit, est vitae sodales pharetra, mi orci tristique elit, sit amet tincidunt dui mi non nibh.</p>
+                <div id="mission-container-top">
+                    <div id="mission-text-container">
+                        <h1>Mission &<br/>
+                        Core Values</h1>
+                        <p>By providing a supportive community and close personal attention to its students, SPPS develops confident, active learners and respectful citizens who lead transformative lives.
+                            Our Five Core Values are embedded in the SPPS curriculum; <br/>
+                            <span>Integrity<span></span></span>, <span>Maturity<span></span></span>, <span>Independence<span></span></span>, <span>Communication<span></span></span> and <span>Transformation<span></span></span> are modeled by all faculty, staff, and students and are implemented throughout all grade levels.</p>
+                    </div>
+                    <div id="mission-img-container">
+                    </div>
                 </div>
-                <div id="mission-img-container">
-                    <img src="./assets/mission.jpg"/>
+                <div id="mission-container-bottom">
+                    <div class="mission-item">
+                        <div class="mission-item-circle">
+                            <img src="./assets/ShieldCheck.svg"/>
+                        </div>
+                        <h4>Integrity</h4>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-item-circle">
+                            <img src="./assets/Person.svg"/>
+                        </div>
+                        <h4>Maturity</h4>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-item-circle">
+                            <img src="./assets/UserFocus.svg"/>
+                        </div>
+                        <h4>Independence</h4>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-item-circle">
+                            <img src="./assets/Broadcast.svg"/>
+                        </div>
+                        <h4>Communication</h4>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-item-circle">
+                            <img src="./assets/LightbulbFilament.svg"/>
+                        </div>
+                        <h4>Transformation</h4>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="profile">
-            <span class="nav-current"></span>
-            <nav>
+            <div id="profile-container">
+                <div id="profile-title">
+                    <div id="profile-title-left">
+                        <h1>Student Profile</h1>
+                        <h4>Class of 2018-2021</h4>
+                    </div>
+                    <div id="profile-title-placeholder"></div>
+                </div>
+                <div id="profile-cards">
+                    <div class="profile-cards-row">
+                        <div class="profile-card blue-bg">
+                            <span><h5>Total Enrollment</h5><h5>131</h5></span>
+                            <span class="col">
+                                <span><h6>Male</h6><h6>54%</h6></span>
+                                <span><h6>Female</h6><h6>46%</h6></span>
+                            </span>
+                            <img alt="" class='triangle' src="./assets/Triangle1.svg"/>
+                            <img alt="" class='triangle' src="assets/Triangle2.svg"/>
+                        </div>
+                        <div class="profile-card green-bg">
+                            <span><h5>Nationality</h5></span>
+                            <span class="col">
+                                <span><h6>Korean</h6><h6>97%</h6></span>
+                                <span><h6>U.S. & Canadian</h6><h6>2%</h6></span>
+                                <span><h6>Other</h6><h6>1%</h6></span>
+                            </span>
+                            <img alt="" id='rect1' src="assets/Rectangle1.svg"/>
+                            <img alt="" id='rect2' src="assets/Rectangle2.svg"/>
+                        </div>
+                    </div>
+                    <div class="profile-cards-row">
+                        <div class="profile-card green-bg">
+                            <span><h5>Teaching Faculty</h5><h5>23</h5></span>
+                            <span>
+                                <span><h6>Advanced Degree Holders</h6><h6>54%</h6></span>
+                            </span>
+                            <img alt="" id='round1' src="assets/RoundStreak1.svg"/>
+                            <img alt="" id="round2" src="assets/RoundStreak2.svg"/>
+                        </div>
+                        <div class="profile-card blue-bg">
+                            <span><h5>Student to Faculty Ratio</h5></span>
+                            <span>
+                                <span class="grey"><h6>6 : 1</h6></span>
+                            </span>
+                            <img alt="" id="blob1" src="assets/Blob1.svg"/>
+                            <img alt="" id="blob2" src="assets/Blob2.svg"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <nav>
+            <div class="nav-relative">
+                <span class="nav-current"></span>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href='#mission'>Mission</a></li>
-                    <li><a href='#profile'>Profile</a></li>
+                    <li id="nav-home"><a href="#hero">Home</a></li>
+                    <li id="nav-mission"><a href='#mission'>Mission</a></li>
+                    <li id="nav-profile"><h3>Profile</h3></li>
                     <li><h3>Accreditations</h3></li>
                     <li><h3>Location</h3></li>
                 </ul>
-                <!-- <span class="nav-current"></span> -->
-            </nav>
-        </section>
-        <span class="nav-current"></span>
+            </div>
+        </nav>
     </main>
 </body>
 </html>

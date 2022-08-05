@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-weight: 600;
+}
+
 :root {
     --navy: #002890;
     --green: #4DD8A6;
@@ -19,16 +23,19 @@ body {
 
 /* HEADER NAV */
 header {
+    box-sizing: content-box;
     height: 100%;
     max-height: 55px;
-    width: 100%;
+    width: calc(100vw - 40px);
+    z-index: 100;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 20px 20px 0 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
     animation: logo-animation-header 6s forwards;
 }
 
@@ -190,14 +197,15 @@ nav ul > li h3 {
 /* SECTIONS */
 main {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 75px);
+    margin-top: 75px;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
 section {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -363,11 +371,28 @@ section {
     letter-spacing: 0.01em;
 }
 
+#hero-text-container h1 span h1 {
+    background-image: linear-gradient(to right, var(--green), rgba(112, 152, 255, 1), var(--green), rgba(112, 152, 255, 1));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    background-size: 300%;
+    background-position: -100%;
+    animation: glowing 2.5s infinite alternate-reverse,
+    opacity-in 1s 12s both;
+}
+
+@keyframes glowing {
+    to {
+        background-position: 100%;
+    }
+}
+
 #hero-text-container p {
     font-family: Lora, sans-serif;
     font-size: 15px;
     font-weight: 400;
-    animation: opacity-in 1.5s 11.5s both;
+    animation: opacity-in 1s 13s both;
 }
 
 #hero-btn {
@@ -385,7 +410,7 @@ section {
     box-shadow: 0 3px 30px rgb(0 40 144 / 30%);
     margin-top: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: opacity-in 1.5s 12s both;
+    animation: opacity-in 1s 14s both;
 }
 
 #hero-btn:hover {
@@ -821,7 +846,7 @@ section {
 
 #location-text h2 {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     opacity: 0;
     transform: translateY(10%);
     transition: opacity 1s 1s, transform 1s 1s;
@@ -835,6 +860,7 @@ section {
 #location-text h4 {
     font-size: 17px;
     font-weight: 400;
+    color: #434343;
 }
 
 #location-text-info {
@@ -951,4 +977,21 @@ section {
 
 @media screen and (max-width: 1000px){
 
+}
+
+/*-------------------*/
+/*------ MOBILE -----*/
+/*-------------------*/
+
+@media screen and (max-width: 768px){
+    #desktop-nav {
+        display: none;
+    }
+    section > div {
+        padding-left: 0 !important;
+        flex-direction: column;
+    }
+    section > div div {
+        width: 100% !important;
+    }
 }

@@ -263,13 +263,26 @@ header {
     #mobile-menu {
         position: fixed;
         top: 87px;
-        right: -10vw;
+        right: 0;
         width: 100vw;
-        height: calc(100vh - 87px);
         background-color: #fff;
-        opacity: 0;
+        box-shadow: 0 20px 20px rgba(0,0,0,0.1);
+        padding: 0 20px 10px 20px;
+        opacity: 0.5;
         visibility: hidden;
-        transition: right 0.5s, visibility 0.5s, opacity 0.5s;
+        transition: visibility 0.1s, opacity 0.5s;
+    }
+    #mobile-menu ul {
+        list-style-type: none;
+    }
+    #mobile-menu li {
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 0;
+    }
+    #mobile-menu li a {
+        color: #002890;
     }
     #hamburger input:checked ~ label > #hamburger-top {
         top: -1px;
@@ -285,7 +298,6 @@ header {
     #hamburger input:checked ~ #mobile-menu {
         visibility: visible;
         opacity: 1;
-        right: 0;
     }
     header {
         padding: 16px 20px !important;
